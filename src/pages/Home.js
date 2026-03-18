@@ -5,7 +5,7 @@ import RecipeCard from '../components/RecipeCard';
 export default function Home() {
   const { recipes, loading, error, searchQuery } = useRecipes();
 
-  const showHero = !searchQuery && recipes.length === 0 && !loading && !error;
+  const showHero = recipes.length === 0 && !loading && !error;
 
   return (
     <>
