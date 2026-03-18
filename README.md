@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# 🥦 Vegetarian Recipes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Un'applicazione web React per scoprire e cucinare ricette vegetariane gustose, powered by Spoonacular API.
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-18.2-61DAFB?style=flat-square&logo=react)
+![React Router](https://img.shields.io/badge/React_Router-6.22-CA4245?style=flat-square&logo=reactrouter)
+![Axios](https://img.shields.io/badge/Axios-1.6-5A29E4?style=flat-square)
+![Spoonacular](https://img.shields.io/badge/API-Spoonacular-green?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📸 Screenshot
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![alt text](image.png)
+![alt text](image-1.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Funzionalità
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Ricerca ricette** — cerca tra migliaia di ricette vegetariane per ingrediente o nome piatto
+- **Griglia risultati** — card con immagine, tempo di preparazione, porzioni e calorie
+- **Pagina dettaglio** — ingredienti completi, istruzioni passo-passo e valori nutrizionali
+- **Solo vegetariano** — filtraggio automatico tramite `diet=vegetarian`
+- **Loading spinner** — feedback visivo durante le chiamate API
+- **Gestione errori** — messaggi user-friendly in caso di errore o nessun risultato
+- **Responsive** — design mobile-first, funziona su tutti i dispositivi
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Stack Tecnologico
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Tecnologia | Versione | Utilizzo |
+|---|---|---|
+| [React](https://reactjs.org) | 18.2 | Framework UI |
+| [React Router DOM](https://reactrouter.com) | 6.22 | Navigazione SPA |
+| [Axios](https://axios-http.com) | 1.6 | Chiamate API HTTP |
+| [Context API](https://react.dev/reference/react/createContext) | built-in | Stato globale |
+| [Spoonacular API](https://spoonacular.com/food-api) | v1 | Dati ricette |
+| CSS Vanilla | — | Styling responsive |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Struttura del Progetto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+vegetarian-recipes/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── Header.js        # Header sticky con logo e barra di ricerca
+│   │   ├── Footer.js        # Footer con attribuzione Spoonacular
+│   │   ├── SearchBar.js     # Form di ricerca con chiamata API
+│   │   └── RecipeCard.js    # Card ricetta con info dettagliate
+│   ├── contexts/
+│   │   └── RecipeContext.js # Context API — stato globale
+│   ├── pages/
+│   │   ├── Home.js          # Homepage con hero e griglia risultati
+│   │   └── RecipeDetail.js  # Pagina dettaglio ricetta
+│   ├── services/
+│   │   └── api.js           # Funzioni Axios per Spoonacular
+│   ├── App.js
+│   ├── App.css
+│   └── index.js
+├── package.json
+└── README.md
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installazione e Avvio
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisiti
 
-## Learn More
+- Node.js >= 16.x
+- npm >= 8.x
+- API key Spoonacular gratuita → [Registrati qui](https://spoonacular.com/food-api/console)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## API Endpoints Utilizzati
 
-### Code Splitting
+| Endpoint | Descrizione |
+|---|---|
+| `GET /recipes/complexSearch` | Ricerca ricette con `diet=vegetarian` |
+| `GET /recipes/{id}/information` | Dettaglio ricetta con nutrizione |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Palette:** nero `#0d0d0d` + verde brillante `#1db954` + bianco
+- **Font:** [Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue) (titoli) + [Nunito](https://fonts.google.com/specimen/Nunito) (corpo)
+- **Tema:** dark mode con accenti verde stile Spotify
+- **Layout:** CSS Grid + Flexbox, mobile-first
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Licenza
 
-### Advanced Configuration
+Distribuito sotto licenza MIT. Vedi `LICENSE` per maggiori informazioni.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Crediti
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Dati ricette forniti da [Spoonacular](https://spoonacular.com/food-api)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
