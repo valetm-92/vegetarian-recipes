@@ -76,7 +76,7 @@ vegetarian-recipes/
 
 - Node.js >= 16.x
 - npm >= 8.x
-- API key Spoonacular gratuita → [Registrati qui](https://spoonacular.com/food-api/console)
+- API key Spoonacular gratuita 
 
 
 ## API Endpoints Utilizzati
@@ -97,11 +97,6 @@ vegetarian-recipes/
 
 ---
 
-## Licenza
-
-Distribuito sotto licenza MIT. Vedi `LICENSE` per maggiori informazioni.
-
----
 
 ## Crediti
 
